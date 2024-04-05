@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content ="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form  id="task-form">
+            <h1>List Task</h1>
+            
+            <div class="items-wrap">
+                <label for="taskName">Nom de la tâche :</label>
+                <input type="text" id="taskName" name="taskName" aria-label="Enter a new task" required>
+            </div>
+            
+            <div class="items-wrap">
+                <label for="dueDate">Date d'échéance :</label>
+                <input type="date" id="dueDate" name="dueDate" aria-label="Enter a new date" required>
+            </div>
+            <div class="items-wrap">
+                <label for="priority">Priorité :</label>
+                <select id="priority" name="priority">
+                    <option value="Haute">Elever</option>
+                    <option value="Moyen">Moyenne</option>
+                    <option value="Basse">Basse</option>
+                </select>
+            </div>
+            
+            <div class="items-wrap">
+                <label for="status">Statut :</label>
+                <select id="status" name="status">
+                    <option value="Faire">todo</option>
+                    <option value="En cours">inprogress</option>
+                    <option value="Terminé">completed</option>
+                </select>
+            </div>
+            
+
+            <button type="submit">Add Task</button>
+
+           
+        </form>
+        <div id="task-list"></div>
+        
+
+    </div>
+     
+     
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
