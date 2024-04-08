@@ -1,7 +1,7 @@
 body{
     font-family: Arial, sans-serif;
-    background:linear-gradient(to left,#cdb4db,#a2d2ff);
-    color: #333;
+    background-color:#6756B9 ;
+    color: #fff;
 }
 .container{
     width: 50%;
@@ -14,6 +14,7 @@ h1{
 
 form{
     display: block;
+    background-color:#7B6CC5;
     margin: 0 auto;
     border-radius: 20px;
     padding: 30px;
@@ -46,14 +47,14 @@ label{
 button{
     padding: 10px;
     background-color: #ffc8dd;
-    color: #333;
+    color: #fff;
     border: pointer;
     border-radius:10px;
     font-weight: bold;
 }
 button:hover{
-    background-color: #ffafcc;
-    color: white;
+    background-color: hotpink;
+    color: #333;
 }
 #task-list{
    margin: 20px;
@@ -62,7 +63,7 @@ button:hover{
 
 }
 .task{
-   background-color: #bde0fe;
+   background-color: #7B6CC5;
    border-radius: 20px;
    padding: 10px;
    margin: 20px;
@@ -74,4 +75,23 @@ button:hover{
     color:hotpink;
     cursor: pointer;
     float: right;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container{
+        width: 80%;
+    }
+
+    form{
+        width: 80%;
+    }
+    
+    #task-list{
+        grid-template-columns: 1fr;
+    }
+    
+    .task{
+        margin: 20px auto;
+    }
 }
