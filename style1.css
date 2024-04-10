@@ -1,70 +1,108 @@
 :root{
-    --violet: #BA68C8;
+    --couleur1: #6756B9;
+    --couleur2: #7B6CC5;
+    --couleur3: #ffc8dd;
+    --couleur4: hotpink;
 }
-/*l'entete*/
+
 body{
-    padding-bottom: 10%;
+    font-family: cursive;
+    background-color:var(--couleur1) ;
+    color: #fff;
+    margin-bottom: 5px;
 }
+.container{
+    width: 50%;
+    margin: 50px auto;
+}
+
 h1{
     text-align: center;
-    font-size: 500%;
-    font-family: "Covered By Your Grace", cursive;
 }
-/*Image à gauche*/
-.img_to_do{
-    width: 40%;
-    height: 30%;
-    float: left;
+
+form{
     display: block;
-    margin: auto;
+    background-color: var(--couleur2);
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 30px;
+    width: 50%;
+    box-shadow: 0px 0px 15px 5px #bde0fe;
+
 }
-/*Le texte à droite*/
-.main{
-    font-size: 300%;
-    margin-bottom: 5%;
-    font-family: 'Bilbo Swash Caps', cursive;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    display: flex;
+.items-wrap{
+    display: block;
+    margin: 20px 0;
 }
-.main p{
-    margin-top: 10%;
+input{
+    border:none;
+    padding: 5px;
+    border-radius: 6px;
+}
+#status{
+    border:none;
+    padding: 5px;
+    border-radius: 6px;
+}
+#priority{
+    border:none;
+    padding: 5px;
+    border-radius: 6px;   
+}
+label{
+    font-weight: 100px;
+}
+button{
+    padding: 10px;
+    background-color: var(--couleur3);
+    color: #fff;
+    border: pointer;
+    border-radius:10px;
+    font-weight: 100px;
+    font-family: cursive;
+    transition: background-color 0.3s ease; /* Animation de transition */
+}
+button:hover{
+    background-color: var(--couleur4);
+    color: #333;
+}
+#task-list{
+   margin: 40px;
+   display: grid;
+   grid-template-columns: repeat(2, 4fr);
+
+}
+.task{
+   background-color: var(--couleur2);
+   border-radius: 20px;
+   padding: 10px;
+   margin: 20px;
+}
+.task span{
+    font-weight: 100px;
+}
+.task .delete {
+    color: var(--couleur4);
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
 }
 
-/*texte en bas et le bouton*/
-.footer{
-    font-size: 200%;
-    font-family: 'Bilbo Swash Caps', cursive;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    display: flex;
-    gap: 10%;
-}
-.footer a{
-    font-family: 'inter';
-    background-color: var(--violet);
-    color: white;
-    border: 0px;
-    height: 50%;
-    width: 80%;
-    font-size: 150%;
-    border-radius: 50px;
-    box-shadow:0px 0px 5px 5px rgba(0, 0, 0, 0.212);
-    margin-top: 5%;
-    margin-right: 10%;
-    text-decoration: none;
-}
 
-@media screen and (max-width: 660px){
-    .main{
-        flex-direction: column;
+@media only screen and (max-width: 768px) {
+    .container{
+        width: 80%;
     }
-    .footer{
-        flex-direction: column;
+
+    form{
+        width: 80%;
     }
-    .footer a{
-        width: auto;
+    
+    #task-list{
+        grid-template-columns: 1fr;
+    }
+    
+    .task{
+        margin: 20px auto;
     }
 }

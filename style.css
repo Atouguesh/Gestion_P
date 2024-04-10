@@ -1,97 +1,66 @@
-body{
-    font-family: Arial, sans-serif;
-    background-color:#6756B9 ;
-    color: #fff;
-}
-.container{
-    width: 50%;
-    margin: 50px auto;
+:root{
+    --couleur1: #6756B9;
 }
 
 h1{
     text-align: center;
+    font-size: 500%;
+    font-family: cursive;
 }
-
-form{
+/*Image Ã  gauche*/
+.img_to_do{
+    width: 40%;
+    height: 30%;
+    float: left;
     display: block;
-    background-color:#7B6CC5;
-    margin: 0 auto;
-    border-radius: 20px;
-    padding: 30px;
-    width: 50%;
-    box-shadow: 0px 0px 15px 5px #bde0fe;
-
+    margin: auto;
 }
-.items-wrap{
-    display: block;
-    margin: 20px 0;
+/*Le texte Ã  droite*/
+.main{
+    font-size: 300%;
+    margin-bottom: 5%;
+    font-family: cursive;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    display: flex;
 }
-input{
-    border:none;
-    padding: 5px;
-    border-radius: 6px;
-}
-#status{
-    border:none;
-    padding: 5px;
-    border-radius: 6px;
-}
-#priority{
-    border:none;
-    padding: 5px;
-    border-radius: 6px;   
-}
-label{
-    font-weight: bold;
-}
-button{
-    padding: 10px;
-    background-color: #ffc8dd;
-    color: #fff;
-    border: pointer;
-    border-radius:10px;
-    font-weight: bold;
-}
-button:hover{
-    background-color: hotpink;
-    color: #333;
-}
-#task-list{
-   margin: 20px;
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-
-}
-.task{
-   background-color: #7B6CC5;
-   border-radius: 20px;
-   padding: 10px;
-   margin: 20px;
-}
-.task span{
-    font-weight: bold;
-}
-.task .delete {
-    color:hotpink;
-    cursor: pointer;
-    float: right;
+.main p{
+    margin-top: 10%;
 }
 
+/*texte en bas et le bouton*/
+.footer{
+    font-size: 200%;
+    font-family: cursive;
+    display: grid;
+    position: relative;
+    height: 50px; /* Ajustez la hauteur du footer selon vos besoins */
+    display: flex;
+    gap: 10%;
+}
+.footer a{
+    font-family: cursive;
+    background-color: var(--couleur1);
+    color: white;
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    width: 17%;
+    font-size: 150%;
+    border-radius: 50px;
+    box-shadow:0px 0px 5px 5px rgba(0, 0, 0, 0.212);
+    text-decoration: none;
+}
 
-@media only screen and (max-width: 768px) {
-    .container{
-        width: 80%;
+@media screen and (max-width: 660px){
+    .main{
+        flex-direction: column;
     }
-
-    form{
-        width: 80%;
+    .footer{
+        flex-direction: column;
     }
-    
-    #task-list{
-        grid-template-columns: 1fr;
-    }
-    
-    .task{
-        margin: 20px auto;
+    .footer a{
+        width: auto;
     }
 }
