@@ -1,14 +1,15 @@
-//get form and task list Element
+// Récupère l'élément du formulaire avec l'ID 
 const form = document.getElementById('task-form');
 const taskList = document.getElementById('task-list');
 
-// Charger les tâches depuis le localStorage au chargement de la page
+//  Appelle la fonction loadTasks() pour charger les tâches depuis le localStorage lors du chargement de la page.
 loadTasks();
 
+// Ajoute un écouteur d'événements sur la soumission du formulaire. Lorsque le formulaire est soumis, la fonction fléchée est exécutée.
 form.addEventListener("submit" , (event) =>{
-    event.preventDefault();
-    //Get form value
-    
+    event.preventDefault();//Empêche le comportement par défaut de soumission du formulaire
+   
+    // Récupère la valeur de l'élément d'entrée du formulaire.
     const date = document.getElementById("dueDate").value;
     const priorite = document.getElementById("priority").value;
     const statut  = document.getElementById("status").value;
@@ -21,9 +22,7 @@ form.addEventListener("submit" , (event) =>{
         priorite: priorite,
         statut: statut
     };
-    //Create task element
-    //const task = document.createElement("div");
-    //task.className = "task";
+   
     // Ajouter la tâche à la liste
     addTask(task);
 
@@ -35,7 +34,7 @@ form.addEventListener("submit" , (event) =>{
     document.getElementById("priority").value = "";
     document.getElementById("status").value = "";
 });
-function addTask(task) {
+function addTask(task) { //  Définit une fonction pour ajouter une tâche à la liste de tâches
     const taskElement = document.createElement("div");
     taskElement.className = "task";
     taskElement.innerHTML = `
@@ -51,20 +50,20 @@ function addTask(task) {
     taskList.appendChild(taskElement);
 }
 
-function saveTaskToLocalStorage(task) {
+function saveTaskToLocalStorage(task) {//Définit une fonction pour sauvegarder une tâche dans le localStorage
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-function loadTasks() {
+function loadTasks() {//Définit une fonction pour charger les tâches depuis le localStorage et les afficher sur la page
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.forEach(task => {
         addTask(task);
     });
 }
 
-function removeTaskFromLocalStorage(task) {
+function removeTaskFromLocalStorage(task) {// Définit une fonction pour supprimer une tâche du localStorage
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks = tasks.filter(item => JSON.stringify(item) !== JSON.stringify(task));
     localStorage.setItem('tasks', JSON.stringify(tasks));
