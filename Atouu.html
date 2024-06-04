@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <form  id="task-form">
-            <h1>List Task</h1>
+            <h1>Liste des tâches</h1>
             
             <div class="items-wrap">
                 <label for="taskName">Nom de la tâche :</label>
@@ -36,17 +36,18 @@
                 <label for="status">Statut :</label>
                 <select id="status" name="status">
                     <option value="Haute">choisir...</option>
-                    <option value="Faire">todo</option>
-                    <option value="En cours">inprogress</option>
-                    <option value="Terminer">completed</option>
+                    <option value="Faire">à faire</option>
+                    <option value="En cours">en cours</option>
+                    <option value="Terminer">terminer</option>
                 </select>
             </div>
             
 
-            <button type="submit">Add Task</button>
+            <button type="submit">Ajouter</button>
 
            
         </form>
+        <h1>Liste des noms</h1>
         <div id="task-list"></div>
         
 

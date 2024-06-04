@@ -10,6 +10,7 @@ form.addEventListener("submit" , (event) =>{
     event.preventDefault();//Empêche le comportement par défaut de soumission du formulaire
    
     // Récupère la valeur de l'élément d'entrée du formulaire.
+    const nom = document.getElementById("taskName").value;
     const date = document.getElementById("dueDate").value;
     const priorite = document.getElementById("priority").value;
     const statut  = document.getElementById("status").value;
@@ -20,7 +21,8 @@ form.addEventListener("submit" , (event) =>{
      const task = {
         date: date,
         priorite: priorite,
-        statut: statut
+        statut: statut,
+        nom: nom
     };
    
     // Ajouter la tâche à la liste
@@ -38,7 +40,7 @@ function addTask(task) { //  Définit une fonction pour ajouter une tâche à la
     const taskElement = document.createElement("div");
     taskElement.className = "task";
     taskElement.innerHTML = `
-        <span>Date: ${task.date}<br>Priorité: ${task.priorite}<br>Statut: ${task.statut}</span>
+        <span>Nom Tâche: ${task.nom}<br>Date: ${task.date}<br>Priorité: ${task.priorite}<br>Statut: ${task.statut}</span>
         <span class="delete">Delete</span>
     `;
     taskElement.querySelector('.delete').addEventListener("click", () => {
